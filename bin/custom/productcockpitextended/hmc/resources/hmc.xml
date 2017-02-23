@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<configuration xmlns="hybris.de/schemas/hmc/generic"
+               xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+               xsi:schemaLocation="hybris.de/schemas/hmc/generic hmc.xsd">
+
+    <!-- Configuration for extension cuppytrail -->
+    <explorertree>
+        <group name="myproduct">
+            <typeref type="MyProduct"/>
+        </group>
+    </explorertree>
+
+    <type name="MyProduct" mode="append">
+        <organizer>
+            <search mode="replace">
+                <condition attribute="code"/>
+                <condition attribute="someattribute"/>
+            </search>
+            <result>
+                <listview mode="replace">
+                    <itemlayout>
+                        <attribute name="unit"/>
+                        <attribute name="someattribute"/>
+                    </itemlayout>
+                </listview>
+            </result>
+            <editor>
+                <essentials>
+                    <listlayout>
+                        <attribute name="code"/>
+                        <attribute name="someattribute"/>
+                        <attribute name="catalog"/>
+                        <!--<attribute name="unit"/>-->
+                    </listlayout>
+                </essentials>
+            </editor>
+        </organizer>
+    </type>
+</configuration>

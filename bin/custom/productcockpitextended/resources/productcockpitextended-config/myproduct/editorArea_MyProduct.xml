@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<editor>
+    <group qualifier="General" visible="true" initially-opened="true">
+        <label key="cockpit.config.label.General"/>
+        <property qualifier="myProduct.someattribute"/>
+        <property qualifier="product.code"/>
+        <property qualifier="product.name"/>
+        <property qualifier="product.catalogversion" editor="shortListEditor"/>
+    </group>
+</editor>

@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+
+<items xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="items.xsd">
+
+    <itemtypes>
+        <itemtype code="MyProduct"
+                  extends="Product"
+                  jaloclass="de.hybris.platform.productcockpitextended.jalo.MyProduct"
+                >
+            <attributes>
+                <attribute qualifier="someattribute" type="localized:java.lang.String">
+                    <modifiers optional="false"/>
+                    <persistence type="property"/>
+                    <description>example for product cockpit</description>
+                </attribute>
+            </attributes>
+        </itemtype>
+    </itemtypes>
+
+</items>

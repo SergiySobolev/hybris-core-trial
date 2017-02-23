@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+  <extensioninfo xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="extensioninfo.xsd">
+
+   <extension abstractclassprefix="Generated" classprefix="Cuppytrail" managername="CuppytrailManager" managersuperclass="de.hybris.platform.jalo.extension.Extension" name="cuppytrail" usemaven="false">
+
+      <requires-extension name="cuppy"/>
+
+      <coremodule generated="true" manager="de.hybris.platform.cuppytrail.jalo.CuppytrailManager" packageroot="de.hybris.platform.cuppytrail"/>
+
+   </extension>
+      
+</extensioninfo>
