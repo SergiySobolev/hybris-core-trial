@@ -4,8 +4,7 @@
 		<path dir="${HYBRIS_BIN_DIR}" />
 		<extension name="admincockpit" />
 		<extension name="backoffice" />
-		<extension name="productcockpit" />
-		<extension name="productcockpitextended" />
+		<extension name="productcockpit" />		
 		<extension name="productcockpitsampledata" />
 		<extension name="cockpit" />
 		<extension name="hmc" />
