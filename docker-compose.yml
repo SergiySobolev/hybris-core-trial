@@ -1,10 +1,10 @@
-hybris-server:
+server:
   build: .
   links:
-    - hybris-database
+    - db
   ports:
     - "9001:9001"  
-hybris-database:
+db:
   image: mysql
   ports:
     - "3306:3306"
