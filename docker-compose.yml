@@ -1,13 +1,13 @@
 server:
   build: .
   links:
-    - db
+    - hybris-mysql
   ports:
     - "9001:9001"  
-db:
+hybris-mysql:
   image: mysql
   ports:
     - "3306:3306"
   environment:
     MYSQL_ROOT_PASSWORD: nimda
-    MYSQL_DATABASE: coretrialdb
+    MYSQL_DATABASE: coretraildb
