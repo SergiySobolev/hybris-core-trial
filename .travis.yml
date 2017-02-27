@@ -5,8 +5,8 @@ language: java
 services:
   - docker
 
-install:
- - docker build -t plaguedocktor/hybris-core-trial .
- 
 script:
- - docker ps | grep -q blog
+ - docker build -t plaguedocktor/hybris-core-trial .
+ - docker ps -a
+
+ 
