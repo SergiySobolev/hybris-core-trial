@@ -7,3 +7,6 @@ services:
 
 install:
  - docker build -t plaguedocktor/hybris-core-trial .
+ 
+ script:
+  - docker ps | grep -q blog
