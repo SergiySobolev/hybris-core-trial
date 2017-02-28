@@ -14,8 +14,8 @@ script:
  
 after_success:
  - docker login -u="$DOCKER_USERNAME" -p="$DOCKER_PASSWORD"
- - REPO=$DOCKER_USERNAME/hybris-core-trial
- - TAG=`if [ “$TRAVIS_BRANCH” == “master” ]; then echo “latest”; else echo $TRAVIS_BRANCH ; fi`;
+ - export REPO=$DOCKER_USERNAME/$DOCKERHUB_REPONAME
+ - export TAG=`if [ “$TRAVIS_BRANCH” == “master” ]; then echo “latest”; else echo $TRAVIS_BRANCH ; fi`;
  - echo $REPO:$TAG:$COMMIT;
  - docker build -f Dockerfile -t $REPO:$COMMIT .
  - docker tag $REPO:$COMMIT $REPO:$TAG;
