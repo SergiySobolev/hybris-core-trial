@@ -13,9 +13,9 @@ script:
  echo "No tests!" 
  
 after_success:
- - docker login -u="$DOCKER_USERNAME" -p="$DOCKER_PASSWORD";
- — export REPO=$DOCKER_USERNAME/hybris-core-trial;
- — export TAG=`if [ “$TRAVIS_BRANCH” == “master” ]; then echo “latest”; else echo $TRAVIS_BRANCH ; fi`;
+ - docker login -u="$DOCKER_USERNAME" -p="$DOCKER_PASSWORD"
+ — REPO=plaguedocktor/hybris-core-trial
+ — TAG=`if [ “$TRAVIS_BRANCH” == “master” ]; then echo “latest”; else echo $TRAVIS_BRANCH ; fi`;
  — echo $REPO:$TAG:$COMMIT;
  — docker build -f Dockerfile -t $REPO:$COMMIT .
  — docker tag $REPO:$COMMIT $REPO:$TAG;
