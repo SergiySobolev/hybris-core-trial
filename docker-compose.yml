@@ -3,7 +3,7 @@ server:
   links:
     - hybris-mysql
   ports:
-    - "9001:9001"  
+    - "127.0.0.1:9001:9001"  
 hybris-mysql:
   image: mysql
   ports:
