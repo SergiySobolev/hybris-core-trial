@@ -9,5 +9,8 @@ script:
  - docker build -t plaguedocktor/hybris-core-trial .
  - docker ps -a
  
-deploy:
- - docker login -u="$DOCKER_USERNAME" -p="$DOCKER_PASSWORD"
+after_success:
+  - if [ "$TRAVIS_BRANCH" == "master" ]; then
+    docker login -u="$DOCKER_USERNAME" -p="$DOCKER_PASSWORD";
+    docker push USER/REPO;
+    fi
