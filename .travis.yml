@@ -10,11 +10,9 @@ env:
      - COMMIT=${TRAVIS_COMMIT::6}  
 
 script:
- - echo "No tests!"
- - docker build -t plaguedocktor/hybris-core-trial .
- - docker ps -a
+ echo "No tests!" 
  
- after_success:
+after_success:
  - docker login -u="$DOCKER_USERNAME" -p="$DOCKER_PASSWORD";
  — export REPO=$DOCKER_USER/hybris-core-trial
  — export TAG=`if [ “$TRAVIS_BRANCH” == “master” ]; then echo “latest”; else echo $TRAVIS_BRANCH ; fi`
