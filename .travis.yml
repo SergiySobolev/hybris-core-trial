@@ -4,11 +4,22 @@ language: java
 
 services:
   - docker
+  
+env:
+  global:
+     - COMMIT=${TRAVIS_COMMIT::6}  
 
 script:
+ - echo "No tests!"
  - docker build -t plaguedocktor/hybris-core-trial .
  - docker ps -a
  
-after_success:
-    docker login -u="$DOCKER_USERNAME" -p="$DOCKER_PASSWORD";
-    docker push plaguedocktor/hybris-core-trial;
+ after_success:
+ - docker login -u="$DOCKER_USERNAME" -p="$DOCKER_PASSWORD";
+ — export REPO=$DOCKER_USER/hybris-core-trial
+ — export TAG=`if [ “$TRAVIS_BRANCH” == “master” ]; then echo “latest”; else echo $TRAVIS_BRANCH ; fi`
+ — echo $REPO:$TAG:$COMMIT
+ — docker build -f Dockerfile -t $REPO:$COMMIT .
+ — docker tag $REPO:$COMMIT $REPO:$TAG
+ — docker tag $REPO:$COMMIT $REPO:travis-$TRAVIS_BUILD_NUMBER
+ — docker push $REPO
