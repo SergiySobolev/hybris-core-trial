@@ -8,5 +8,6 @@ services:
 script:
  - docker build -t plaguedocktor/hybris-core-trial .
  - docker ps -a
-
  
+deploy:
+ - docker login -u="$DOCKER_USERNAME" -p="$DOCKER_PASSWORD"
